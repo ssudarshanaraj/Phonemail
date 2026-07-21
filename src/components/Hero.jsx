@@ -104,7 +104,7 @@ export default function Hero() {
                 textAlign: { xs: 'center', lg: 'left' },
               }}
             >
-              <Chip
+              {/*<Chip
                 label="SMART EMAIL FOR A SMARTER YOU ✦"
                 size="small"
                 sx={{
@@ -118,7 +118,7 @@ export default function Hero() {
                   backdropFilter: 'blur(8px)',
                   boxShadow: '0 0 24px rgba(0,128,255,0.15)',
                 }}
-              />
+              />*/}
               <Typography
                 variant="h1"
                 sx={{
