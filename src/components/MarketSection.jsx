@@ -27,13 +27,13 @@ const STATS = [
     valueColor: '#0080FF',
     label: 'Government Emails',
   },
-  {
+  /*{
     icon: GppGoodOutlinedIcon,
     color: '#059669',
     value: '100%',
     valueColor: '#059669',
     label: 'Secure & Privacy Focused',
-  },
+  },*/
 ]
 
 const SERVICES = [
@@ -82,7 +82,7 @@ export default function MarketSection() {
             <Reveal>
               <Chip
                 icon={<StarIcon sx={{ fontSize: 15, color: '#0080FF !important' }} />}
-                label="India's First Phone-based Email Platform"
+                label="India's First Phone Number-based Email Platform"
                 size="small"
                 sx={{
                   fontSize: '0.8rem',
