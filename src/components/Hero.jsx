@@ -23,12 +23,12 @@ const STATS = [
     value: '63.1%',
     label: "don't know how to use email",
   },
-  {
+ /* {
     icon: VerifiedUserOutlinedIcon,
     color: '#059669',
     value: '100%',
     label: 'Privacy-focused & secure',
-  },
+  },*/
 ]
 
 export default function Hero() {
@@ -131,13 +131,13 @@ export default function Hero() {
                 <br />
                 for{' '}
                 <Box component="span" sx={brand.gradientText}>
-                  what matters
+                  What matters
                 </Box>
                 .
               </Typography>
               <Typography sx={{ fontSize: { xs: '1.05rem', md: '1.15rem' }, color: 'text.secondary', maxWidth: 540, lineHeight: 1.7 }}>
                 PhoneMail is an upcoming email platform that eliminates the need for separate email
-                IDs — and anchors your inbox to the number you already have.
+                IDs, and anchors email IDs to phone numbers.
               </Typography>
               <Typography
                 sx={{
