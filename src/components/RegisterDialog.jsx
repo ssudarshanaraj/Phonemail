@@ -250,7 +250,7 @@ export default function RegisterDialog({ open, onClose }) {
                   lineHeight: 1.6,
                 }}
               >
-                Be the first to get your phone-number email ID when we launch.
+               Be among the first to claim your PhoneMail ID at launch.
               </Typography>
             </Stack>
 
