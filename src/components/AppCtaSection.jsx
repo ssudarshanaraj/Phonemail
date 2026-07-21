@@ -11,7 +11,7 @@ import Reveal from './Reveal.jsx'
 import inboxImg from '../assets/app-inbox.jpeg'
 import conversationImg from '../assets/app-conversation.jpeg'
 
-const FEATURES = [
+/*const FEATURES = [
   {
     icon: InboxIcon,
     color: '#60A5FA',
@@ -36,7 +36,7 @@ const FEATURES = [
     title: 'Built for India',
     desc: 'Designed for every Indian, to make communication effortless.',
   },
-]
+]*/
 
 function AppPhone({ src, alt, width, sx }) {
   return (
