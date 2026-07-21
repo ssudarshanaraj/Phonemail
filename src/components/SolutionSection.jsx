@@ -150,7 +150,7 @@ export default function SolutionSection() {
           <Stack spacing={2.5} sx={{ alignItems: 'center', textAlign: 'center', mb: { xs: 6, md: 8 } }}>
             <Chip
               icon={<AutoAwesomeIcon sx={{ fontSize: 15, color: '#0080FF !important' }} />}
-              label="Powerful Features. Zero Complexity."
+              label="Advanced Features. Effortless Experience."
               size="small"
               sx={{
                 fontSize: '0.8rem',
@@ -167,9 +167,9 @@ export default function SolutionSection() {
                 PhoneMail
               </Box>
             </Typography>
-            <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' }, color: 'text.secondary', maxWidth: 620, lineHeight: 1.7 }}>
+            {/* <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' }, color: 'text.secondary', maxWidth: 620, lineHeight: 1.7 }}>
               Everything you need to manage your communication smarter, faster and better.
-            </Typography>
+            </Typography>*/}
           </Stack>
         </Reveal>
 
