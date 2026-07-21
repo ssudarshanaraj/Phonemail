@@ -21,7 +21,7 @@ const APPLICATIONS = [
     from: '#4DA3FF',
     to: '#0080FF',
     title: 'Courts and Legal',
-    desc: 'Secure delivery of notices, summons, orders and legal documents.',
+   // desc: 'Secure delivery of notices, summons, orders and legal documents.',
   },
   {
     image: welfareImg,
@@ -29,7 +29,7 @@ const APPLICATIONS = [
     from: '#A78BFA',
     to: '#7C3AED',
     title: 'Welfare Schemes',
-    desc: 'Reach citizens with scheme updates, approvals and benefit notifications.',
+   // desc: 'Reach citizens with scheme updates, approvals and benefit notifications.',
   },
   {
     image: bankingImg,
@@ -37,7 +37,7 @@ const APPLICATIONS = [
     from: '#00C2FF',
     to: '#0080FF',
     title: 'Financial Services',
-    desc: 'Account alerts, statements, KYC updates and transaction notifications.',
+   // desc: 'Account alerts, statements, KYC updates and transaction notifications.',
   },
   {
     image: healthImg,
@@ -45,7 +45,7 @@ const APPLICATIONS = [
     from: '#2DD4BF',
     to: '#0D9488',
     title: 'Utilities and Healthcare',
-    desc: 'Bills, appointment reminders, test reports and service updates.',
+    //desc: 'Bills, appointment reminders, test reports and service updates.',
   },
 ]
 
@@ -58,7 +58,7 @@ export default function ApplicationsSection() {
           <Stack spacing={2.5} sx={{ alignItems: 'center', textAlign: 'center', mb: { xs: 6, md: 8 } }}>
             <Chip
               icon={<StarIcon sx={{ fontSize: 15, color: '#0080FF !important' }} />}
-              label="Trusted Across Sectors"
+              label="Built for Every Sector"
               size="small"
               sx={{
                 fontSize: '0.8rem',
@@ -72,7 +72,7 @@ export default function ApplicationsSection() {
             <Typography variant="h2" sx={{ fontSize: { xs: '2.5rem', sm: '3.25rem', md: '3.75rem' }, lineHeight: 1.05 }}>
               Real-World{' '}
               <Box component="span" sx={brand.gradientText}>
-                Applications
+                Impact
               </Box>
             </Typography>
             <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' }, color: 'text.secondary', maxWidth: 620, lineHeight: 1.7 }}>
@@ -170,7 +170,7 @@ export default function ApplicationsSection() {
             <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
               <GppGoodOutlinedIcon sx={{ fontSize: 19, color: '#0080FF' }} />
               <Typography sx={{ fontSize: '0.9rem', color: 'primary.main' }}>
-                Secure. Compliant. Reliable.
+                Secure. Reliable. Compliant.
               </Typography>
             </Stack>
             <Divider sx={{ flexGrow: 1, borderColor: 'rgba(11,27,51,0.1)' }} />
