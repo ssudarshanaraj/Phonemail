@@ -190,7 +190,7 @@ export default function AppCtaSection() {
                     >
                       <NotificationsActiveIcon sx={{ fontSize: 22, color: '#60A5FA' }} />
                     </Box>
-                    <Typography sx={{ flexGrow: 1, fontSize: '0.95rem', color: 'text.secondary', textAlign: { xs: 'center', sm: 'left' } }}>
+                   {/*<Typography sx={{ flexGrow: 1, fontSize: '0.95rem', color: 'text.secondary', textAlign: { xs: 'center', sm: 'left' } }}>
                       Be the first to experience the future of email.
                     </Typography>
                     <Button
@@ -207,7 +207,7 @@ export default function AppCtaSection() {
                       }}
                     >
                       Notify Me
-                    </Button>
+                    </Button>*/}
                   </Stack>
                 </Stack>
 
