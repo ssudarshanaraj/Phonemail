@@ -1,0 +1,11 @@
+/* Active FAQ content */
+#faq .overflow-hidden.active {
+  max-height: 1000px; /* large enough for content */
+  opacity: 1;
+}
+
+/* Arrow rotation */
+#faq button svg.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
