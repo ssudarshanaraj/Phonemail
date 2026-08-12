@@ -1,4 +1,10 @@
+// Must be set wherever this app is built (e.g. the hosting platform's build
+// env vars) — Vite bakes it in at build time. Left unset, it would otherwise
+// silently resolve requests against the current page's own origin.
 const BASE_URL = import.meta.env.VITE_API_BASE_URL
+if (!BASE_URL) {
+  throw new Error('VITE_API_BASE_URL is not set. Configure it in the build environment.')
+}
 
 // Shared request helper. Resolves with the parsed JSON body on success and
 // throws an Error with a user-displayable message on failure. Note: this API

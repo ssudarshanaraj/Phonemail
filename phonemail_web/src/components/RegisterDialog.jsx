@@ -84,8 +84,8 @@ export default function RegisterDialog({ open, onClose }) {
       );
       const [year, month, day] = values.dob.split("-");
       const payload = {
-        email: `${dialDigits}${values.phone}@thephonemail.com`,
-        // email: `${dialDigits}${values.phone}`,
+        // email: `${dialDigits}${values.phone}@thephonemail.com`,
+        email: `${dialDigits}${values.phone}@phonemail.in`,
         firstName: name,
         phoneNumber: values.phone,
         dateOfBirth: `${year}/${Number(month)}/${Number(day)}`,
