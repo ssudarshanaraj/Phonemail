@@ -161,10 +161,10 @@ export default function FaqSection() {
                 <HeadsetMicOutlinedIcon sx={{ fontSize: 24, color: '#0080FF' }} />
               </Box>
               <Box>
-                <Typography sx={{ fontSize: '0.95rem', color: 'text.primary' }}>Want to learn more? </Typography>
+                <Typography sx={{ fontSize: '0.95rem', color: 'text.primary' }}>Still have questions?</Typography>
                 <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
                   <Typography sx={{ fontSize: '1rem', fontWeight: 600, color: '#0080FF' }}>
-                    Reach us at contact@phonemail.in
+                    Contact our support team
                   </Typography>
                   <ChevronRightIcon sx={{ fontSize: 18, color: '#0080FF' }} />
                 </Stack>

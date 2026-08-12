@@ -95,7 +95,7 @@ const SECTIONS = [
   {
     title: '12. Contact Us',
     paragraphs: [
-      <>If you have questions about this Privacy Policy, or wish to request removal of a link, content, or personal data, please contact us at <strong>contact@phonemail.in</strong>.</>,
+      <>If you have questions about this Privacy Policy, or wish to request removal of a link, content, or personal data, please contact PhoneMail via the contact details provided on <strong>phonemail.com</strong>.</>,
     ],
   },
 ]
