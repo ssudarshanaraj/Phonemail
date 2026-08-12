@@ -12,7 +12,7 @@ import inboxImg from '../assets/app-inbox.jpeg'
 import conversationImg from '../assets/app-conversation.jpeg'
 
 const FEATURES = [
- /* {
+  {
     icon: InboxIcon,
     color: '#60A5FA',
     title: 'Smart Inbox',
@@ -35,7 +35,7 @@ const FEATURES = [
     color: '#FB923C',
     title: 'Built for India',
     desc: 'Designed for every Indian, to make communication effortless.',
-  },*/
+  },
 ]
 
 function AppPhone({ src, alt, width, sx }) {
@@ -162,7 +162,7 @@ export default function AppCtaSection() {
                   </Stack>
 
                   {/* notify me strip */}
-                 {/* <Stack
+                  <Stack
                     direction={{ xs: 'column', sm: 'row' }}
                     spacing={2}
                     sx={{
@@ -190,7 +190,7 @@ export default function AppCtaSection() {
                     >
                       <NotificationsActiveIcon sx={{ fontSize: 22, color: '#60A5FA' }} />
                     </Box>
-                   <Typography sx={{ flexGrow: 1, fontSize: '0.95rem', color: 'text.secondary', textAlign: { xs: 'center', sm: 'left' } }}>
+                    <Typography sx={{ flexGrow: 1, fontSize: '0.95rem', color: 'text.secondary', textAlign: { xs: 'center', sm: 'left' } }}>
                       Be the first to experience the future of email.
                     </Typography>
                     <Button
@@ -208,7 +208,7 @@ export default function AppCtaSection() {
                     >
                       Notify Me
                     </Button>
-                  </Stack>*/}
+                  </Stack>
                 </Stack>
 
                 {/* right — phone trio */}
