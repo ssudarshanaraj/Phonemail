@@ -23,6 +23,16 @@ import { brand } from "../theme.js";
 import { COUNTRIES, countryByIso, flagOf } from "../data/countryCodes.js";
 import { registerUser } from "../api/userApi.js";
 
+// Registrants must be at least 3 years old, so the date of birth cannot be
+// more recent than 3 years before today.
+const MIN_AGE_YEARS = 3;
+const maxDobDate = (() => {
+  const d = new Date();
+  d.setFullYear(d.getFullYear() - MIN_AGE_YEARS);
+  return d;
+})();
+const maxDobStr = maxDobDate.toISOString().split("T")[0];
+
 const validationSchema = Yup.object({
   firstName: Yup.string()
     .trim()
@@ -45,7 +55,7 @@ const validationSchema = Yup.object({
     }),
   dob: Yup.date()
     .typeError("Enter a valid date of birth")
-    .max(new Date(), "Date of birth must be in the past")
+    .max(maxDobDate, `You must be at least ${MIN_AGE_YEARS} years old`)
     .required("Date of birth is required"),
   gender: Yup.string()
     .oneOf(["male", "female", "other"], "Select a gender")
@@ -61,6 +71,27 @@ const fieldSx = {
     "&.Mui-focused fieldset": { borderColor: "#0080FF" },
   },
 };
+
+function FieldLabel({ htmlFor, children }) {
+  return (
+    <Typography
+      component="label"
+      htmlFor={htmlFor}
+      sx={{
+        display: "block",
+        mb: 0.75,
+        fontSize: "0.9rem",
+        fontWeight: 600,
+        color: "text.primary",
+      }}
+    >
+      {children}
+      <Box component="span" sx={{ color: "#DC2626", ml: 0.25 }}>
+        *
+      </Box>
+    </Typography>
+  );
+}
 
 export default function RegisterDialog({ open, onClose }) {
   const [result, setResult] = useState(null); // { data } on success
@@ -260,9 +291,11 @@ export default function RegisterDialog({ open, onClose }) {
               </Alert>
             )}
 
-            <TextField
+            <Box>
+              <FieldLabel htmlFor="firstName">Name</FieldLabel>
+              <TextField
+              id="firstName"
               name="firstName"
-              label="Name"
               placeholder="Ramesh Kumar"
               fullWidth
               value={formik.values.firstName}
@@ -282,11 +315,14 @@ export default function RegisterDialog({ open, onClose }) {
                   ),
                 },
               }}
-            />
+              />
+            </Box>
 
-            <TextField
+            <Box>
+              <FieldLabel htmlFor="phone">Phone number</FieldLabel>
+              <TextField
+              id="phone"
               name="phone"
-              label="Phone number"
               placeholder="9876543210"
               fullWidth
               value={formik.values.phone}
@@ -368,12 +404,15 @@ export default function RegisterDialog({ open, onClose }) {
                   ),
                 },
               }}
-            />
+              />
+            </Box>
 
             <Stack direction={{ xs: "column", sm: "row" }} spacing={2.25}>
-              <TextField
+              <Box sx={{ flex: 1 }}>
+                <FieldLabel htmlFor="dob">Date of birth</FieldLabel>
+                <TextField
+                id="dob"
                 name="dob"
-                label="Date of birth"
                 type="date"
                 fullWidth
                 value={formik.values.dob}
@@ -384,12 +423,15 @@ export default function RegisterDialog({ open, onClose }) {
                 sx={fieldSx}
                 slotProps={{
                   inputLabel: { shrink: true },
-                  htmlInput: { max: new Date().toISOString().split("T")[0] },
+                  htmlInput: { max: maxDobStr },
                 }}
-              />
-              <TextField
+                />
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                <FieldLabel htmlFor="gender">Gender</FieldLabel>
+                <TextField
+                id="gender"
                 name="gender"
-                label="Gender"
                 select
                 fullWidth
                 value={formik.values.gender}
@@ -398,11 +440,25 @@ export default function RegisterDialog({ open, onClose }) {
                 error={fieldError("gender")}
                 helperText={helper("gender")}
                 sx={fieldSx}
-              >
-                <MenuItem value="male">Male</MenuItem>
-                <MenuItem value="female">Female</MenuItem>
-                <MenuItem value="other">Other</MenuItem>
-              </TextField>
+                slotProps={{
+                  select: {
+                    displayEmpty: true,
+                    renderValue: (v) =>
+                      v ? (
+                        v.charAt(0).toUpperCase() + v.slice(1)
+                      ) : (
+                        <Box component="span" sx={{ color: "text.secondary" }}>
+                          Select
+                        </Box>
+                      ),
+                  },
+                }}
+                >
+                  <MenuItem value="male">Male</MenuItem>
+                  <MenuItem value="female">Female</MenuItem>
+                  <MenuItem value="other">Other</MenuItem>
+                </TextField>
+              </Box>
             </Stack>
 
             <Button

@@ -34,28 +34,41 @@ function Home() {
   )
 }
 
+function AppShell() {
+  const { pathname } = useLocation()
+  // The language-specific privacy policy pages (/privacy-policy/en,
+  // /privacy-policy/ta) are embedded in the mobile app, so they render
+  // without the site header, footer, and back-to-top button.
+  const embedded = /^\/privacy-policy\/[^/]+$/.test(pathname)
+
+  return (
+    <Box
+      sx={{
+        minHeight: '100vh',
+        bgcolor: 'background.default',
+        color: 'text.primary',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {!embedded && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/privacy-policy/:lang" element={<PrivacyPolicyPage />} />
+        <Route path="/delete-account" element={<DeleteAccountPage />} />
+      </Routes>
+      {!embedded && <Footer />}
+      {!embedded && <BackToTop />}
+    </Box>
+  )
+}
+
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Box
-        sx={{
-          minHeight: '100vh',
-          bgcolor: 'background.default',
-          color: 'text.primary',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/delete-account" element={<DeleteAccountPage />} />
-        </Routes>
-        <Footer />
-        <BackToTop />
-      </Box>
+      <AppShell />
     </BrowserRouter>
   )
 }
