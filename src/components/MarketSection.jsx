@@ -119,7 +119,7 @@ export default function MarketSection() {
                 <Typography sx={{ fontSize: '0.95rem', color: 'text.secondary', lineHeight: 1.8 }}>
                   Every service where your phone number is registered can now reach you by email.
                   This means your scheme updates, government notifications, and court summons will
-                  now reach you directly in your inbox.
+                  now reach you directly in your inboxx.
                 </Typography>
               </Stack>
             </BentoTile>
